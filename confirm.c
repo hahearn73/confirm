@@ -13,7 +13,7 @@ int main(int argc, char *argv[]) {
     response = getchar();
     if (!(response == 'y' || response == 'Y' || response == '\n'))
     {
-        printf("Exiting");
+        printf("Exiting\n");
         exit(0);
     }
 
