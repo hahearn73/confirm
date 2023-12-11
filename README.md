@@ -10,4 +10,4 @@ Create an alias with
 alias [command]="/path/to/confirm command"
 ```
 in `~/.bashrc` and run
-`source ~/.bashrc`
+`source ~/.bashrc` or restart terminal session to use the alias
