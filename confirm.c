@@ -9,23 +9,22 @@ int main(int argc, char *argv[]) {
     }
 
     char response;
-    printf("Are you sure? (y/N): ");
+    printf("Are you sure? (Y/n): ");
     response = getchar();
-    if (!(response == 'y' || response == 'Y' || response == '\n'))
+    if (!(response == 'y' || response == 'Y'))
     {
         printf("Exiting\n");
         exit(0);
     }
 
     int total_length = 0;
-    for (int i = 1; i < argc; ++i) {
+    for (int i = 1; i < argc; ++i)
         total_length += snprintf(NULL, 0, "%s ", argv[i]);
-    }
 
     char *command = (char *)malloc(total_length + 1);
     if (command == NULL) {
         perror("malloc");
-        exit(0);
+        exit(1);
     }
 
     command[0] = '\0';
