@@ -17,9 +17,9 @@ int main(int argc, char *argv[]) {
         exit(0);
     }
 
-    int total_length = 0;
+    size_t total_length = 0;
     for (int i = 1; i < argc; ++i)
-        total_length += snprintf(NULL, 0, "%s ", argv[i]);
+        total_length += strlen(argv[i]) + 1;
 
     char *command = (char *)malloc(total_length + 1);
     if (command == NULL) {
@@ -29,7 +29,7 @@ int main(int argc, char *argv[]) {
 
     command[0] = '\0';
     for (int i = 1; i < argc; ++i) {
-        strcat(command, argv[i]);
+        strncat(command, argv[i], strlen(argv[i]));
         strcat(command, " ");
     }
 
